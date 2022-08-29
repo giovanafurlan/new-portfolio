@@ -22,9 +22,12 @@ export default function Home() {
         backgroundPosition={'center'}
         w='80'
         h='80'
-        bgImage='url("/images/user.jpg")'
+        bgImage='url("/images/user.png")'
         py='20'
-        left='40vw'
+        left={{
+          lg: '40vw',
+          sm: '8'
+        }}
         top='10vw'
         pos={'absolute'}>
         <Flex
@@ -35,16 +38,18 @@ export default function Home() {
           h='20'
           align={'center'}
           pl='4'>
-          <Avatar src=''/>
+          <Avatar src='' />
         </Flex>
-        <Text>Giovana Furlan Portifólio</Text>
         <Button
           bgImage='url("/images/btn-start.jpg")'
           backgroundRepeat='no-repeat'
           backgroundPosition={'center'}
           w='40'
-          h='38'
-          borderRadius={0}>
+          h='45px'
+          borderRadius={0}
+          _hover={{
+            color: 'none'
+          }}>
 
         </Button>
       </VStack>
