@@ -1,14 +1,18 @@
 import {
-  Container,
   Box,
   Flex,
   Button,
   Avatar,
   VStack,
-  Text
+  Text,
+  Image
 } from "@chakra-ui/react";
+import { useRouter } from "next/router";
 
 export default function Home() {
+
+  const router = useRouter();
+
   return (
     <Box
       w='100vw'
@@ -28,8 +32,23 @@ export default function Home() {
           lg: '40vw',
           sm: '8'
         }}
-        top='10vw'
+        top={{
+          sm: '50vw',
+          lg: '10vw'
+        }}
         pos={'absolute'}>
+        <Button
+          pos='absolute'
+          top='0.5'
+          right='2'
+          bg='none'
+          p='0'>
+          <Image
+            src='/images/x.png'
+            alt='X'
+            w='24px' />
+        </Button>
+
         <Flex
           bgImage='url("/images/box.png")'
           backgroundRepeat='no-repeat'
@@ -40,7 +59,11 @@ export default function Home() {
           pl='4'>
           <Avatar src='' />
         </Flex>
+        <Text>
+          Bem vindo
+        </Text>
         <Button
+          onClick={() => router.push('/inicio')}
           bgImage='url("/images/btn-start.jpg")'
           backgroundRepeat='no-repeat'
           backgroundPosition={'center'}
@@ -50,7 +73,6 @@ export default function Home() {
           _hover={{
             color: 'none'
           }}>
-
         </Button>
       </VStack>
     </Box>

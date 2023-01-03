@@ -2,7 +2,6 @@
 import { ChakraProvider } from '@chakra-ui/react'
 import { extendTheme } from '@chakra-ui/react'
 import "@fontsource/ubuntu";
-import Seo from '../components/seo.tsx';
 
 const theme = extendTheme({
   fonts: {
@@ -21,10 +20,6 @@ const theme = extendTheme({
 function MyApp({ Component, pageProps }) {
   return (
     <ChakraProvider theme={theme}>
-      <Seo
-        title="Giovana Furlan"
-        description="Portifolio"
-      />
       <Component {...pageProps} />
     </ChakraProvider>
   )
